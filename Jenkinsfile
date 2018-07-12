@@ -58,7 +58,7 @@ pipeline {
             when {
                 branch 'master'
             }
-            step {
+            steps {
                 script {
                     def response = httpRequest(
                         url: "http://$KUBE_MASTER_IP:8081/",
