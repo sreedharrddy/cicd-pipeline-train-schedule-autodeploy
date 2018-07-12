@@ -54,11 +54,11 @@ pipeline {
                 )
             }
         }
-        stage('SmokeTest') {
+        stage ('SmokeTest') {
             when {
                 branch 'master'
             }
-            step{
+            step {
                 script {
                     def response = httpRequest(
                         url: "http://$KUBE_MASTER_IP:8081/",
@@ -98,6 +98,5 @@ pipeline {
                     enableConfigSubstitution: true
                 )
         }
-    }
-    
+    } 
 }
